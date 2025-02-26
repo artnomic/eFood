@@ -2,30 +2,40 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
-export const Card = styled.div`
+export const Container = styled.div`
   max-width: 472px;
-
-  padding: 8px;
 
   border: 1px solid ${cores.rosa};
   border-radius: 8px;
 
   background-color: ${cores.branca};
-  background-repeat: no-repeat;
-  background-size: cover;
 
   position: relative;
+  overflow: hidden;
 
   ${TagContainer} {
     margin-right: 8px;
   }
 `
 
-export const CardContainer = styled.div`
-  padding-top: 217px;
+export const Imagem = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
 `
 
-export const CardTextLine = styled.div`
+export const Infos = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+`
+
+export const CardContainer = styled.div`
+  padding: 8px;
+`
+
+export const CardLine = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 16px 8px;
@@ -33,18 +43,17 @@ export const CardTextLine = styled.div`
 
 export const Avaliacao = styled.div`
   display: flex;
-  align-items: center;
-`
 
-export const TextoAvaliacao = styled.h4`
-  padding-right: 8px;
-  font-weight: bold;
-  font-size: 16px;
+  h4 {
+    padding-right: 8px;
+    font-weight: bold;
+    font-size: 18px;
+  }
 `
 
 export const Titulo = styled.h3`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   text-align: center;
 `
