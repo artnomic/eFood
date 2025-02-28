@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, styled } from 'styled-components'
 
 export const cores = {
   rosa: '#E66767',
@@ -22,4 +22,10 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     margin: 0 auto;
   }
+`
+
+export const ErrorMensage = styled.p`
+  font-size: 48px;
+  text-align: center;
+  padding: 240px 240px 800px 240px;
 `

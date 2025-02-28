@@ -13,6 +13,7 @@ const restaurantes: Restaurant[] = [
     image: sushi,
     infos: ['Destaque da semana', 'Japonesa'],
     rate: 4.9,
+    segment: 'Japonesa',
     title: 'Hioki Sushi'
   },
   {
@@ -22,6 +23,7 @@ const restaurantes: Restaurant[] = [
     image: massa,
     infos: ['Italiana'],
     rate: 4.6,
+    segment: 'Italiana',
     title: 'La Dolce Vita Trattoria'
   },
   {
@@ -31,6 +33,7 @@ const restaurantes: Restaurant[] = [
     image: massa,
     infos: ['Italiana'],
     rate: 4.6,
+    segment: 'Italiana',
     title: 'La Dolce Vita Trattoria'
   },
   {
@@ -40,6 +43,7 @@ const restaurantes: Restaurant[] = [
     image: massa,
     infos: ['Italiana'],
     rate: 4.6,
+    segment: 'Italiana',
     title: 'La Dolce Vita Trattoria'
   },
   {
@@ -49,6 +53,7 @@ const restaurantes: Restaurant[] = [
     image: massa,
     infos: ['Italiana'],
     rate: 4.6,
+    segment: 'Italiana',
     title: 'La Dolce Vita Trattoria'
   },
   {
@@ -58,6 +63,7 @@ const restaurantes: Restaurant[] = [
     image: massa,
     infos: ['Italiana'],
     rate: 4.6,
+    segment: 'Italiana',
     title: 'La Dolce Vita Trattoria'
   }
 ]

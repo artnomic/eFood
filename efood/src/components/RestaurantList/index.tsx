@@ -13,6 +13,7 @@ const RestaurantList = ({ restaurants }: Props) => (
         {restaurants.map((restaurant) => (
           <Modelo
             key={restaurant.id}
+            id={restaurant.id}
             title={restaurant.title}
             description={restaurant.description}
             rate={restaurant.rate}

@@ -11,8 +11,10 @@ import {
 } from './styles'
 
 import avaliacao from '../../assets/images/estrela.png'
+import { Link } from 'react-router-dom'
 
 type Props = {
+  id: number
   title: string
   description: string
   rate: number
@@ -20,7 +22,7 @@ type Props = {
   infos: string[]
 }
 
-const Restaurant = ({ title, description, rate, image, infos }: Props) => (
+const Restaurant = ({ id, title, description, rate, image, infos }: Props) => (
   <>
     <Container>
       <Infos>
@@ -41,7 +43,9 @@ const Restaurant = ({ title, description, rate, image, infos }: Props) => (
           <Descricao>{description}</Descricao>
         </CardLine>
         <CardLine>
-          <Tag>Saiba mais</Tag>
+          <Link to={`/restaurant/${id}`}>
+            <Tag>Saiba mais</Tag>
+          </Link>
         </CardLine>
       </CardContainer>
     </Container>

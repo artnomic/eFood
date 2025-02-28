@@ -31,9 +31,10 @@ export const Logo = styled.img`
 
 export const Slogan = styled.h2`
   font-size: 36px;
-  font-weight: bold;
-  padding: 140px 375px 0 375px;
+  font-weight: 900;
   text-align: center;
+  padding: 140px 0 40px 0;
+  max-width: 540px;
 `
 
 export const Home = styled.div`

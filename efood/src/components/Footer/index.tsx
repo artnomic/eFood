@@ -9,11 +9,14 @@ import {
 } from './styles'
 
 import logo from '../../assets/images/logoEfood.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => (
   <FooterContainer>
     <div className="container">
-      <img src={logo} />
+      <Link to="/">
+        <img src={logo} />
+      </Link>
       <FooterList>
         <FooterListContainer>
           <a href="#">
