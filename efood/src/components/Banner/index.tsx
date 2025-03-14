@@ -14,7 +14,9 @@ const Banner = ({ title, segment, image }: Props) => (
       }}
     >
       <div className="container">
-        <Segmento>{segment}</Segmento>
+        <Segmento>
+          {segment.charAt(0).toUpperCase() + segment.slice(1)}
+        </Segmento>
         <Titulo>{title}</Titulo>
       </div>
     </Imagem>

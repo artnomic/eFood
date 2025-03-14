@@ -1,4 +1,4 @@
-import Restaurant from '../../models/Restaurant'
+import { Restaurant } from '../../pages/Home'
 import Modelo from '../Restaurant'
 import { Container, List } from './styles'
 
@@ -14,11 +14,14 @@ const RestaurantList = ({ restaurants }: Props) => (
           <Modelo
             key={restaurant.id}
             id={restaurant.id}
-            title={restaurant.title}
-            description={restaurant.description}
-            rate={restaurant.rate}
-            image={restaurant.image}
-            infos={restaurant.infos}
+            title={restaurant.titulo}
+            description={restaurant.descricao}
+            rate={restaurant.avaliacao}
+            image={restaurant.capa}
+            destacado={restaurant.destacado}
+            tipo={
+              restaurant.tipo.charAt(0).toUpperCase() + restaurant.tipo.slice(1)
+            }
           />
         ))}
       </List>

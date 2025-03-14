@@ -19,16 +19,24 @@ type Props = {
   description: string
   rate: number
   image: string
-  infos: string[]
+  destacado: boolean
+  tipo: string
 }
 
-const Restaurant = ({ id, title, description, rate, image, infos }: Props) => (
+const Restaurant = ({
+  id,
+  title,
+  description,
+  rate,
+  image,
+  destacado,
+  tipo
+}: Props) => (
   <>
     <Container>
       <Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
+        {destacado && <Tag>Destaque da Semana</Tag>}
+        <Tag>{tipo}</Tag>
       </Infos>
       <Imagem src={image} />
       <CardContainer>
