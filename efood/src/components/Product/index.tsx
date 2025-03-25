@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux'
+
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -14,6 +16,8 @@ import {
 } from './style'
 
 import fechar from '../../assets/images/fechar.png'
+
+import { add, open } from '../../store/reducers/cart'
 
 type ModalState = {
   isVisible: boolean
@@ -46,6 +50,8 @@ const Product = ({
   porcao,
   preco
 }: Props) => {
+  const dispatch = useDispatch()
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     url: ''
@@ -56,6 +62,20 @@ const Product = ({
       isVisible: false,
       url: ''
     })
+  }
+
+  const addToCart = () => {
+    dispatch(
+      add({
+        id,
+        foto: image,
+        preco,
+        nome: title,
+        descricao: description,
+        porcao
+      })
+    )
+    dispatch(open())
   }
 
   return (
@@ -77,11 +97,7 @@ const Product = ({
             <Descricao>{description}</Descricao>
           </CardLine>
           <CardLine>
-            <MaisDetalhes>
-              <Link to={`/restaurant/${restaurantId}/${id}`}>
-                Mais detalhes
-              </Link>
-            </MaisDetalhes>
+            <MaisDetalhes>Mais detalhes</MaisDetalhes>
           </CardLine>
         </CardContainer>
       </Container>
@@ -93,10 +109,8 @@ const Product = ({
             <h4>{title}</h4>
             <p>{description}</p>
             <p>Serve: de {porcao}</p>
-            <MaisDetalhes>
-              <Link to={`/restaurant/${restaurantId}/${id}`}>
-                Adicionar ao carrinho - {formatCurrencies(preco)}
-              </Link>
+            <MaisDetalhes onClick={addToCart}>
+              Adicionar ao carrinho - {formatCurrencies(preco)}
             </MaisDetalhes>
           </div>
 

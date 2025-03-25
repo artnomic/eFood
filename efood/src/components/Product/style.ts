@@ -82,6 +82,8 @@ export const MaisDetalhes = styled.div`
 
   margin-top: auto;
 
+  cursor: pointer;
+
   a {
     text-decoration: none;
   }

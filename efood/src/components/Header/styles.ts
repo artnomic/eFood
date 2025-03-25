@@ -22,10 +22,14 @@ export const HeaderBar = styled.header`
 export const Fonte = styled.p`
   font-weight: bold;
   font-size: 18px;
+
+  &:nth-of-type(2) {
+    cursor: pointer;
+  }
 `
 
 export const Logo = styled.img`
-  max-widht: 125px;
+  max-width: 125px;
   height: 56px;
 `
 
