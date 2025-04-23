@@ -17,6 +17,7 @@ import {
 import fechar from '../../assets/images/fechar.png'
 
 import { add, open } from '../../store/reducers/cart'
+import { formatCurrencies } from '../../utils'
 
 type ModalState = {
   isVisible: boolean
@@ -26,26 +27,19 @@ type ModalState = {
 type Props = {
   id: number
   restaurantId: number
-  title: string
-  description: string
-  image: string
+  nome: string
+  descricao: string
+  foto: string
   porcao: string
   preco: number
-}
-
-export const formatCurrencies = (price = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
 }
 
 const Product = ({
   id,
   restaurantId,
-  title,
-  description,
-  image,
+  nome,
+  descricao,
+  foto,
   porcao,
   preco
 }: Props) => {
@@ -67,14 +61,15 @@ const Product = ({
     dispatch(
       add({
         id,
-        foto: image,
+        foto,
         preco,
-        nome: title,
-        descricao: description,
+        nome,
+        descricao,
         porcao
       })
     )
     dispatch(open())
+    closeModal()
   }
 
   return (
@@ -84,16 +79,16 @@ const Product = ({
           onClick={() => {
             setModal({
               isVisible: true,
-              url: image
+              url: foto
             })
           }}
         >
-          <Imagem src={image} />
+          <Imagem src={foto} />
           <CardLine>
-            <Titulo>{title}</Titulo>
+            <Titulo>{nome}</Titulo>
           </CardLine>
           <CardLine>
-            <Descricao>{description}</Descricao>
+            <Descricao>{descricao}</Descricao>
           </CardLine>
           <CardLine>
             <MaisDetalhes>Mais detalhes</MaisDetalhes>
@@ -105,8 +100,8 @@ const Product = ({
           <img className="plate" src={modal.url} />
 
           <div>
-            <h4>{title}</h4>
-            <p>{description}</p>
+            <h4>{nome}</h4>
+            <p>{descricao}</p>
             <p>Serve: de {porcao}</p>
             <MaisDetalhes onClick={addToCart}>
               Adicionar ao carrinho - {formatCurrencies(preco)}
@@ -117,10 +112,10 @@ const Product = ({
             className="close"
             src={fechar}
             alt="Icone de Fechar"
-            onClick={() => closeModal()}
+            onClick={closeModal}
           />
         </ModalContent>
-        <div className="overlay" onClick={() => closeModal()}></div>
+        <div className="overlay" onClick={closeModal}></div>
       </Modal>
     </>
   )

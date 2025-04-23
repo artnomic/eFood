@@ -2,7 +2,7 @@ import { useGetRestaurantQuery } from '../../services/api'
 
 import Header from '../../components/Header'
 import RestaurantList from '../../components/RestaurantList'
-import { Food } from '../RestaurantPage'
+import Loader from '../../components/Loader'
 
 export type Restaurant = {
   id: number
@@ -27,7 +27,7 @@ const Home = () => {
     )
   }
 
-  return <h4>Carregando...</h4>
+  return <Loader />
 }
 
 export default Home

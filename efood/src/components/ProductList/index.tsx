@@ -1,6 +1,6 @@
 import Product from '../Product'
 import { Container, List } from './styles'
-import { Food } from '../../pages/RestaurantPage'
+import Loader from '../Loader'
 
 type Props = {
   produtos: Food[]
@@ -18,15 +18,15 @@ const RestaurantList = ({ produtos, restaurantId = 0 }: Props) => {
                 key={produto.id}
                 id={produto.id}
                 restaurantId={restaurantId}
-                title={produto.nome}
-                description={produto.descricao}
-                image={produto.foto}
+                nome={produto.nome}
+                descricao={produto.descricao}
+                foto={produto.foto}
                 porcao={produto.porcao}
                 preco={produto.preco}
               />
             ))
           ) : (
-            <p>Carregando produtos...</p>
+            <Loader />
           )}
         </List>
       </div>

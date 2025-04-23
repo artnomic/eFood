@@ -1,4 +1,3 @@
-import { Restaurant } from '../../pages/Home'
 import Modelo from '../Restaurant'
 import { Container, List } from './styles'
 

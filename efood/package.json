@@ -12,14 +12,18 @@
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
     "ajv": "^8.17.1",
+    "formik": "^2.4.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-input-mask": "^2.0.4",
     "react-native-vector-icons": "^10.2.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "^5.0.1",
+    "react-spinners": "^0.17.0",
     "styled-components": "^6.1.15",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,6 +53,7 @@
     "@babel/core": "^7.26.9",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^22.13.5",
+    "@types/react-input-mask": "^3.0.6",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",

@@ -5,6 +5,8 @@ import Header from '../../components/Header'
 import ProductList from '../../components/ProductList'
 
 import { useGetRestaurantByIdQuery } from '../../services/api'
+import Loader from '../../components/Loader'
+import Checkout from '../../components/Checkout'
 
 export type Food = {
   id: number
@@ -20,7 +22,11 @@ const RestaurantPage = () => {
   const { data: restaurante, isLoading } = useGetRestaurantByIdQuery(id!)
 
   if (isLoading) {
-    return <h4>Carregando...</h4>
+    return (
+      <div className="container">
+        <Loader />
+      </div>
+    )
   }
 
   return (
