@@ -180,6 +180,7 @@ const Checkout = () => {
               Esperamos que desfrute de uma deliciosa e agradável experiência
               gastronômica. Bom apetite!
             </p>
+            <Button onClick={finish}>Concluir</Button>
           </ThanksInfos>
         ) : (
           <>
@@ -359,8 +360,6 @@ const Checkout = () => {
             )}
           </>
         )}
-
-        <Button onClick={finish}>Concluir</Button>
       </Sidebar>
     </CartContainer>
   )
